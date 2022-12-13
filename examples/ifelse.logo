@@ -1,0 +1,13 @@
+# some comment
+a = 5
+b = 3
+if ( 5 > 4 )
+then
+    if ( :a > 5 and :b < 5 )
+    then
+        write 'TRUE'
+    else
+        write 'FALSE'
+            write "Yes, it is"
+    end
+end

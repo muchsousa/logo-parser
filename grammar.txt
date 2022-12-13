@@ -1,0 +1,81 @@
+program: statement other_statement
+
+other_statement: statement other_statement | empty
+
+statement: instruction 
+    | variable_declaration
+    | procedure_declaration
+    | procedure_call
+    | if_then_else 
+    | while_loop 
+    | write 
+
+instruction: FO number_expression | FORWARD number_expression
+    | BK number_expression | BACKWARD number_expression
+    | RT number_expression | RIGHT expression
+    | LT number_expression | LEFT number_expression
+    | PU | PENUP
+    | PD | PENDOWN
+    | WC | WIPECLEAN
+    | CS | CLEARSCREEN
+    | HOME
+    | HEADING
+    | TYPEIN
+    | SETXY number_expression, number_expression
+    | XCOR number_expression
+    | YCOR number_expression
+
+variable_declaration: <id> = expression
+
+variable: :<id> 
+
+argument_list: argument_list, argument | argument
+
+argument: expression | empty
+
+procedure_declaration: TO <id> argument_list other_statement END
+
+expression_list: expression_list, expression | expression | empty
+
+procedure_call: <id> expression_list
+
+expression: number_expression 
+    | boolean_expression
+    | (expression)
+    | RANDOM
+    | string
+
+number_expression: number_expression + number_expression
+    | number_expression - number_expression
+    | number_expression * number_expression
+    | number_expression / number_expression
+    | number_expression ^ number_expression
+    | (number_expression)
+    | variable
+    | <number>
+
+boolean_expression: relational_operation 
+    | boolean_expression OR boolean_expression
+    | boolean_expression AND boolean_expression
+    | NOT boolean_expression
+    | variable
+    | <true>
+    | <false>
+
+relational_operation: expression > expression
+    | expression < expression
+    | expression >= expression
+    | expression <= expression
+    | expression == expression
+    | expression <> expression
+
+if_then_else: IF ( boolean_expression ) THEN other_statement END
+    | IF ( boolean_expression ) THEN other_statement ELSE other_statement END
+
+while_loop: WHILE ( boolean_expression ) other_statement END
+
+write : WRITE expression | WRITE string
+
+empty: &
+
+string: <string>

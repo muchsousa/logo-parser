@@ -1,0 +1,78 @@
+{'name': 'relational_expression', 'children': [{'name': 'expression', 'children': [{'name': 'COLON_ID', 'value': 'a'}]}, {'name': 'REL_OP', 'value': '>'}, {'name': 'expression', 'children': [{'name': 'NUMBER', 'value': 0}]}]}
+- name: program
+  children:
+  - name: statement_or_decl
+    children:
+    - name: statement
+      children:
+      - name: assignment_expression
+        children:
+        - name: ID
+          value: a
+        - name: ASSIGN_OP
+          value: '='
+        - name: string_or_expression
+          children:
+          - name: value_expression
+            children:
+            - name: expression
+              children:
+              - name: NUMBER
+                value: 5
+  - name: other_statement
+    children:
+    - name: statement_or_decl
+      children:
+      - name: statement
+        children:
+        - name: while_statement
+          children:
+          - name: WHILE
+          - name: condition
+            children:
+            - name: OPEN_PAR
+              value: (
+            - name: boolean_expression
+              children:
+              - name: relational_expression
+                children:
+                - name: expression
+                  children:
+                  - name: COLON_ID
+                    value: a
+                - name: REL_OP
+                  value: '>'
+                - name: expression
+                  children:
+                  - name: NUMBER
+                    value: 0
+            - name: CLOSE_PAR
+              value: )
+          - name: body
+            children:
+            - name: statement
+              children:
+              - name: assignment_expression
+                children:
+                - name: ID
+                  value: a
+                - name: ASSIGN_OP
+                  value: '='
+                - name: string_or_expression
+                  children:
+                  - name: value_expression
+                    children:
+                    - name: expression
+                      children:
+                      - name: expression
+                        children:
+                        - name: COLON_ID
+                          value: a
+                      - name: OPERATOR
+                        value: '-'
+                      - name: expression
+                        children:
+                        - name: NUMBER
+                          value: 1
+          - name: END
+

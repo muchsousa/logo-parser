@@ -1,0 +1,14 @@
+TO SQUARE :length
+    FORWARD :length
+    RIGHT 90
+    FORWARD :length
+    RIGHT 90
+    FORWARD :length
+    RIGHT 90
+    FORWARD :length
+    RIGHT 90
+END
+
+SETXY 20
+SQUARE 30
+

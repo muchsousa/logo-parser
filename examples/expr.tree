@@ -1,0 +1,38 @@
+{'name': 'relational_expression', 'children': [{'name': 'expression', 'children': [{'name': 'NUMBER', 'value': 5}]}, {'name': 'REL_OP', 'value': '>'}, {'name': 'expression', 'children': [{'name': 'NUMBER', 'value': 9}]}]}
+- name: program
+  children:
+  - name: statement_or_decl
+    children:
+    - name: statement
+      children:
+      - name: assignment_expression
+        children:
+        - name: ID
+          value: b
+        - name: ASSIGN_OP
+          value: '='
+        - name: string_or_expression
+          children:
+          - name: value_expression
+            children:
+            - name: boolean_expression
+              children:
+              - name: OPEN_PAR
+                value: (
+              - name: boolean_expression
+                children:
+                - name: relational_expression
+                  children:
+                  - name: expression
+                    children:
+                    - name: NUMBER
+                      value: 5
+                  - name: REL_OP
+                    value: '>'
+                  - name: expression
+                    children:
+                    - name: NUMBER
+                      value: 9
+              - name: CLOSE_PAR
+                value: )
+

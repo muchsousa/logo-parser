@@ -1,0 +1,123 @@
+- name: program
+  children:
+  - name: statement_or_decl
+    children:
+    - name: statement
+      children:
+      - name: assignment_expression
+        children:
+        - name: ID
+          value: a
+        - name: ASSIGN_OP
+          value: '='
+        - name: string_or_expression
+          children:
+          - name: value_expression
+            children:
+            - name: expression
+              children:
+              - name: expression
+                children:
+                - name: NUMBER
+                  value: 1
+              - name: OPERATOR
+                value: '-'
+              - name: expression
+                children:
+                - name: expression
+                  children:
+                  - name: OPEN_PAR
+                    value: (
+                  - name: expression
+                    children:
+                    - name: expression
+                      children:
+                      - name: NUMBER
+                        value: 2
+                    - name: OPERATOR
+                      value: +
+                    - name: expression
+                      children:
+                      - name: expression
+                        children:
+                        - name: NUMBER
+                          value: 3
+                      - name: OPERATOR
+                        value: '*'
+                      - name: expression
+                        children:
+                        - name: NUMBER
+                          value: 4
+                  - name: CLOSE_PAR
+                    value: )
+                - name: OPERATOR
+                  value: '*'
+                - name: expression
+                  children:
+                  - name: NUMBER
+                    value: 3
+  - name: other_statement
+    children:
+    - name: statement_or_decl
+      children:
+      - name: statement
+        children:
+        - name: assignment_expression
+          children:
+          - name: ID
+            value: b
+          - name: ASSIGN_OP
+            value: '='
+          - name: string_or_expression
+            children:
+            - name: value_expression
+              children:
+              - name: expression
+                children:
+                - name: expression
+                  children:
+                  - name: COLON_ID
+                    value: a
+                - name: OPERATOR
+                  value: +
+                - name: expression
+                  children:
+                  - name: expression
+                    children:
+                    - name: expression
+                      children:
+                      - name: NUMBER
+                        value: 4
+                    - name: OPERATOR
+                      value: '*'
+                    - name: expression
+                      children:
+                      - name: NUMBER
+                        value: 2
+                  - name: OPERATOR
+                    value: '*'
+                  - name: expression
+                    children:
+                    - name: NUMBER
+                      value: 3
+    - name: other_statement
+      children:
+      - name: statement_or_decl
+        children:
+        - name: statement
+          children:
+          - name: parameter_list
+            children:
+            - name: IO_PRIMITIVE
+              value: WRITE
+            - name: parameter_list
+              children:
+              - name: string_or_expression
+                children:
+                - name: value_expression
+                  children:
+                  - name: expression
+                    children:
+                    - name: COLON_ID
+                      value: b
+
